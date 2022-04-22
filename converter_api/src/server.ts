@@ -78,7 +78,10 @@ app.post('/convert-mp3', async (req, res) => {
         });
     }
   } catch (ex) {
-    return responseError(res, ex.message);
+    return responseError(
+      res,
+      ex.response?.data?.message || 'Internal Server Error',
+    );
   }
 });
 
