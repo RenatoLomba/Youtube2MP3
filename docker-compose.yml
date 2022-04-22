@@ -1,0 +1,24 @@
+version: '3.7'
+
+services:
+  api:
+    build: ./converter_api
+    container_name: converter_api
+    command: npm start
+    ports:
+      - 5000:5000
+    volumes:
+      - ./converter_api:/usr/app
+
+  web:
+    build: ./converter_page
+    container_name: converter_page
+    command: npm start
+    ports:
+      - 3000:3000
+    volumes:
+      - ./converter_page:/usr/app
+    links:
+      - api
+    depends_on:
+      - api

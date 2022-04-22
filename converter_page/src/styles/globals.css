@@ -1,0 +1,15 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  color: white;
+  overflow: hidden;
+}
+
+body,
+input,
+button {
+  font-family: 'Orbitron', sans-serif;
+}
